@@ -1,0 +1,63 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "wagtail-release-test-20231012"
+authors = [{name = "Fred Bloggs", email = "fred@example.com"}]
+description = "A one line description of your package."
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Framework :: Django",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Wagtail",
+    "Framework :: Wagtail :: 2",
+    "Framework :: Wagtail :: 4",
+    "Framework :: Wagtail :: 5",
+]
+requires-python = ">=3.8"
+dynamic = ["version"]
+dependencies = [
+    "Django>=3.2",
+    "Wagtail>=4.1,<6.0"
+]
+[project.optional-dependencies]
+testing = [
+    "dj-database-url==2.1.0",
+    "pre-commit==3.4.0"
+]
+
+[project.urls]
+Home = "https://github.com/chris48s/wagtail-release-test-20231012"
+
+[tool.flit.module]
+name = "wagtail_release_test_20231012"
+
+[tool.flit.sdist]
+exclude = [
+    "wagtail_release_test_20231012/static_src",
+    "wagtail_release_test_20231012/test",
+    "wagtail_release_test_20231012/static/wagtail_release_test_20231012/js/.gitignore",
+    "testmanage.py",
+    ".*",
+    "*.js",
+    "*.json",
+    "*.ini",
+    "*.yml"
+]
